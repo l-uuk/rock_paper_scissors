@@ -1,0 +1,34 @@
+<script>
+
+let playerSelection = prompt("Rock, paper, or scissors");
+
+function computerPlay() {
+    const options = ["rock", "paper", "scissors"]
+    const rps = options[Math.floor(Math.random()*options.length)];
+    return rps; 
+    }
+    console.log(computerPlay())
+
+function playRound(playerSelection, computerPlay) {
+    if (    (playerSelection == "rock" && computerPlay == "rock") || 
+            (playerSelection == "paper" && computerPlay == "paper") || 
+            (playerSelection == "scissors" && computerPlay == "scissors") ){
+        console.log(`It's a tie`);
+        } 
+    else if ( 
+        (playerSelection == "rock" && computerPlay == "scissors") || 
+        (playerSelection == "paper" && computerPlay == "rock") || 
+        (playerSelection == "scissors" && computerPlay == "paper") ){ 
+            console.log(`You win!`);
+        }
+    else (  
+        (playerSelection == "rock" && computerPlay == "paper") || 
+        (playerSelection == "paper" && computerPlay == "scissors") || 
+        (playerSelection == "scissors" && computerPlay == "rock") );{
+            console.log(`Computer wins!`);
+        }
+}
+
+playRound()
+
+</script>
