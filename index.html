@@ -1,34 +1,36 @@
 <script>
+    let playerSelection = prompt("Rock, paper, or scissors?")
 
-let playerSelection = prompt("Rock, paper, or scissors");
+    function computerPlay() {
+        const options = ["rock", "paper", "scissors"]
+        const rps = options[Math.floor(Math.random()*options.length)];
+        return rps; 
+        }
+    
+    function playRound(playerSelection, computerPlay) {
+        if (    (playerSelection === "rock" && computerPlay === "rock") || 
+                (playerSelection === "paper" && computerPlay === "paper") || 
+                (playerSelection === "scissors" && computerPlay === "scissors") ){
+            return(`You chose ${playerSelection}, and computer chose ${computerPlay}. It's a tie.`);
+            } 
 
-function computerPlay() {
-    const options = ["rock", "paper", "scissors"]
-    const rps = options[Math.floor(Math.random()*options.length)];
-    return rps; 
+        else if ( 
+            (playerSelection === "rock" && computerPlay === "scissors") || 
+            (playerSelection === "paper" && computerPlay === "rock") || 
+            (playerSelection === "scissors" && computerPlay === "paper") ){ 
+                return(`You chose ${playerSelection}, and computer chose ${computerPlay}. You win!`);
+            }
+            
+        else (  
+            (playerSelection === "rock" && computerPlay === "paper") || 
+            (playerSelection === "paper" && computerPlay === "scissors") || 
+            (playerSelection === "scissors" && computerPlay === "rock") );{
+                return(`You chose ${playerSelection}, and computer chose ${computerPlay}. Computer wins!`);
+            }
     }
-    console.log(computerPlay())
 
-function playRound(playerSelection, computerPlay) {
-    if (    (playerSelection == "rock" && computerPlay == "rock") || 
-            (playerSelection == "paper" && computerPlay == "paper") || 
-            (playerSelection == "scissors" && computerPlay == "scissors") ){
-        console.log(`It's a tie`);
-        } 
-    else if ( 
-        (playerSelection == "rock" && computerPlay == "scissors") || 
-        (playerSelection == "paper" && computerPlay == "rock") || 
-        (playerSelection == "scissors" && computerPlay == "paper") ){ 
-            console.log(`You win!`);
-        }
-    else (  
-        (playerSelection == "rock" && computerPlay == "paper") || 
-        (playerSelection == "paper" && computerPlay == "scissors") || 
-        (playerSelection == "scissors" && computerPlay == "rock") );{
-            console.log(`Computer wins!`);
-        }
-}
+    console.log(playRound(playerSelection, computerPlay()))
 
-playRound()
+    </script>
 
-</script>
+    
