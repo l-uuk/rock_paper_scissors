@@ -8,10 +8,11 @@
         }
     
     function playRound(playerSelection, computerPlay) {
-        if (    (playerSelection === "rock" && computerPlay === "rock") || 
-                (playerSelection === "paper" && computerPlay === "paper") || 
-                (playerSelection === "scissors" && computerPlay === "scissors") ){
-            return(`You chose ${playerSelection}, and computer chose ${computerPlay}. It's a tie.`);
+        if (    
+            (playerSelection === "rock" && computerPlay === "rock") || 
+            (playerSelection === "paper" && computerPlay === "paper") || 
+            (playerSelection === "scissors" && computerPlay === "scissors") ){
+                return(`You chose ${playerSelection}, and computer chose ${computerPlay}. It's a tie.`);
             } 
 
         else if ( 
